@@ -11,7 +11,8 @@ class CategoriesController < ApplicationController
 #	end
 
 	def show
-		hobo_show Category.find_by_permalink(params[:id])
+		@site = Site.find_by_name(I18n.locale.to_s)
+		hobo_show Category.find_by_permalink_and_site_id(params[:id], @site.id)
 	end
 
 

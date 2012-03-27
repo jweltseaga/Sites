@@ -14,6 +14,7 @@ class Site < ActiveRecord::Base
 	has_many :categories, :order => :position
 	children :categories, :pressreleases
   has_many :pressreleases
+	
 
   # --- Permissions --- #
 

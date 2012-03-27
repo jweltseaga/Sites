@@ -423,7 +423,6 @@
 
     <content: param>
           <header param="content-header">
-            <a:site param="parent-link">&laquo; <ht key="category.actions.back_to_parent" parent="Site" name="&this">Back to <name/></ht></a:site>
             <h2 param="heading">
               <ht key="category.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
@@ -435,7 +434,7 @@
 
           <section param="content-body">
             <view:description param="description"/>
-            <field-list fields="permalink, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, position" param/>
+            <field-list fields="permalink, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, position, site" param/>
             <section param="collection-section">
               <h3 param="collection-heading">
                 <ht key="machine_assignment.collection.heading" count="&this.machine_assignments.count" >
