@@ -1,0 +1,19 @@
+<page title="Home">
+
+  <body: class="front-page"/>
+
+  <content:>
+    <header class="content-header">
+      <h1>Welcome to The Seaga Group</h1>
+      <section class="welcome-message">
+        <p>
+            Developed in 2012, this web application was designed by Jeremy Welt and Benjamin Clos... To take the world of vending by storm.
+        </p>
+      </section>
+    </header>
+
+    <section class="content-body">
+    </section>
+  </content:>
+
+</page>

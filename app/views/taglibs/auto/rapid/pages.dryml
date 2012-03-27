@@ -1,0 +1,1750 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Brochure"><ht key="brochure.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Machine"><ht key="machine.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Manual"><ht key="manual.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Pressrelease"><ht key="pressrelease.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
+
+
+
+
+<!-- ====== Api Pages ====== -->
+
+<def tag="index-page" for="Api">
+  <page merge title="#{ht 'api.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page api" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="api.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="api.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Api">
+  <page merge title="#{ht 'api.new.title', :default=>[' New Api'] }">
+    <body: class="new-page api" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="api.new.heading">
+            New Api
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'api.actions.create', :default=>['Create Api']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Api">
+  <page merge title="#{ht 'api.show.title', :default=>['Api'] }">
+
+    <body: class="show-page api" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="api.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Api">
+  <page merge title="#{ht 'api.edit.title', :default=>['Edit Api'] }">
+
+    <body: class="edit-page api" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="api.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Api
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'api.actions.delete', :default=>['Remove This Api']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== BrochureAssignment Pages ====== -->
+
+<def tag="index-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page brochure-assignment" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="brochure_assignment.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="brochure_assignment.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.new.title', :default=>[' New Brochure assignment'] }">
+    <body: class="new-page brochure-assignment" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure_assignment.new.heading">
+            New Brochure assignment
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'brochure_assignment.actions.create', :default=>['Create Brochure assignment']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.show.title', :default=>['Brochure assignment'] }">
+
+    <body: class="show-page brochure-assignment" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="brochure_assignment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="position, brochure, machine" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="BrochureAssignment">
+  <page merge title="#{ht 'brochure_assignment.edit.title', :default=>['Edit Brochure assignment'] }">
+
+    <body: class="edit-page brochure-assignment" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure_assignment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Brochure assignment
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'brochure_assignment.actions.delete', :default=>['Remove This Brochure assignment']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Brochure Pages ====== -->
+
+<def tag="index-page" for="Brochure">
+  <page merge title="#{ht 'brochure.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page brochure" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="brochure.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="brochure.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Brochure">
+  <page merge title="#{ht 'brochure.new.title', :default=>[' New Brochure'] }">
+    <body: class="new-page brochure" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure.new.heading">
+            New Brochure
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'brochure.actions.create', :default=>['Create Brochure']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Brochure">
+  <page merge title="#{ht 'brochure.show.title', :default=>['Brochure'] }">
+
+    <body: class="show-page brochure" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="brochure.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="external_description, internal_description, file_name, pdf_file_name, pdf_content_type, pdf_file_size, pdf_updated_at" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="machine.collection.heading" count="&this.machines.count" >
+                  <human-collection-name collection="machines" your/>
+                </ht>
+              </h3>
+
+              <collection:machines param/>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Brochure">
+  <page merge title="#{ht 'brochure.edit.title', :default=>['Edit Brochure'] }">
+
+    <body: class="edit-page brochure" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="brochure.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Brochure
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'brochure.actions.delete', :default=>['Remove This Brochure']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Category Pages ====== -->
+
+<def tag="index-page" for="Category">
+  <page merge title="#{ht 'category.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page category" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="category.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="category.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Category">
+  <page merge title="#{ht 'category.new.title', :default=>[' New Category'] }">
+    <body: class="new-page category" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="category.new.heading">
+            New Category
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'category.actions.create', :default=>['Create Category']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Category">
+  <page merge title="#{ht 'category.show.title', :default=>['Category'] }">
+
+    <body: class="show-page category" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:site param="parent-link">&laquo; <ht key="category.actions.back_to_parent" parent="Site" name="&this">Back to <name/></ht></a:site>
+            <h2 param="heading">
+              <ht key="category.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="published" param/>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="permalink, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, position" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="machine_assignment.collection.heading" count="&this.machine_assignments.count" >
+                  <human-collection-name collection="machine_assignments" your/>
+                </ht>
+              </h3>
+
+              <sortable-collection:machine_assignments param="collection"/>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Category">
+  <page merge title="#{ht 'category.edit.title', :default=>['Edit Category'] }">
+
+    <body: class="edit-page category" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="category.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Category
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'category.actions.delete', :default=>['Remove This Category']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+
+
+
+<!-- ====== Feature Pages ====== -->
+
+<def tag="index-page" for="Feature">
+  <page merge title="#{ht 'feature.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page feature" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="feature.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="feature.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Feature">
+  <page merge title="#{ht 'feature.new.title', :default=>[' New Feature'] }">
+    <body: class="new-page feature" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="feature.new.heading">
+            New Feature
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'feature.actions.create', :default=>['Create Feature']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Feature">
+  <page merge title="#{ht 'feature.show.title', :default=>['Feature'] }">
+
+    <body: class="show-page feature" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:machine param="parent-link">&laquo; <ht key="feature.actions.back_to_parent" parent="Machine" name="&this">Back to <name/></ht></a:machine>
+            <h2 param="heading">
+              <ht key="feature.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Feature">
+  <page merge title="#{ht 'feature.edit.title', :default=>['Edit Feature'] }">
+
+    <body: class="edit-page feature" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="feature.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Feature
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'feature.actions.delete', :default=>['Remove This Feature']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== MachineAssignment Pages ====== -->
+
+<def tag="index-page" for="MachineAssignment">
+  <page merge title="#{ht 'machine_assignment.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page machine-assignment" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="machine_assignment.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="machine_assignment.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="MachineAssignment">
+  <page merge title="#{ht 'machine_assignment.new.title', :default=>[' New Machine assignment'] }">
+    <body: class="new-page machine-assignment" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="machine_assignment.new.heading">
+            New Machine assignment
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'machine_assignment.actions.create', :default=>['Create Machine assignment']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="MachineAssignment">
+  <page merge title="#{ht 'machine_assignment.show.title', :default=>['Machine assignment'] }">
+
+    <body: class="show-page machine-assignment" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:category param="parent-link">&laquo; <ht key="machine_assignment.actions.back_to_parent" parent="Category" name="&this">Back to <name/></ht></a:category>
+            <h2 param="heading">
+              <ht key="machine_assignment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="position, machine" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="MachineAssignment">
+  <page merge title="#{ht 'machine_assignment.edit.title', :default=>['Edit Machine assignment'] }">
+
+    <body: class="edit-page machine-assignment" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="machine_assignment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Machine assignment
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'machine_assignment.actions.delete', :default=>['Remove This Machine assignment']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Machine Pages ====== -->
+
+<def tag="index-page" for="Machine">
+  <page merge title="#{ht 'machine.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page machine" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="machine.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="machine.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Machine">
+  <page merge title="#{ht 'machine.new.title', :default=>[' New Machine'] }">
+    <body: class="new-page machine" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="machine.new.heading">
+            New Machine
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'machine.actions.create', :default=>['Create Machine']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Machine">
+  <page merge title="#{ht 'machine.show.title', :default=>['Machine'] }">
+
+    <body: class="show-page machine" param/>
+
+    <content: param>
+      <section-group>
+        <section param="main-content">
+          <header param="content-header">
+            <a:brochures param="parent-link">&laquo; <ht key="machine.actions.back_to_parent" parent="Brochure" name="&this">Back to <name/></ht></a:brochures>
+            <h2 param="heading">
+              <ht key="machine.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="published" param/>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="permalink, height, width, depth, capacity, weight, us_photo_file_name, us_photo_content_type, us_photo_file_size, us_photo_updated_at, uk_photo_file_name, uk_photo_content_type, uk_photo_file_size, uk_photo_updated_at, in_photo_file_name, in_photo_content_type, in_photo_file_size, in_photo_updated_at" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="feature.collection.heading" count="&this.features.count" >
+                  <human-collection-name collection="features" your/>
+                </ht>
+              </h3>
+
+              <collection:features param/>
+            </section>
+          </section>
+        </section>
+
+        <aside param>
+          <section param="manual_assignments-collection-section">
+            <h3 param="manual_assignments-collection-heading">
+              <ht key="manual_assignment.collection.heading" count="&this.manual_assignments.count" >
+                <human-collection-name collection="manual_assignments" your/>
+              </ht>
+            </h3>
+            <collection:manual_assignments  param="manual_assignments-collection"/>
+          </section>
+        </aside>
+      </section-group>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Machine">
+  <page merge title="#{ht 'machine.edit.title', :default=>['Edit Machine'] }">
+
+    <body: class="edit-page machine" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="machine.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Machine
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'machine.actions.delete', :default=>['Remove This Machine']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== ManualAssignment Pages ====== -->
+
+<def tag="index-page" for="ManualAssignment">
+  <page merge title="#{ht 'manual_assignment.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page manual-assignment" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="manual_assignment.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="manual_assignment.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="ManualAssignment">
+  <page merge title="#{ht 'manual_assignment.new.title', :default=>[' New Manual assignment'] }">
+    <body: class="new-page manual-assignment" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="manual_assignment.new.heading">
+            New Manual assignment
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'manual_assignment.actions.create', :default=>['Create Manual assignment']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="ManualAssignment">
+  <page merge title="#{ht 'manual_assignment.show.title', :default=>['Manual assignment'] }">
+
+    <body: class="show-page manual-assignment" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="manual_assignment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="position, machine, manual" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="ManualAssignment">
+  <page merge title="#{ht 'manual_assignment.edit.title', :default=>['Edit Manual assignment'] }">
+
+    <body: class="edit-page manual-assignment" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="manual_assignment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Manual assignment
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'manual_assignment.actions.delete', :default=>['Remove This Manual assignment']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Manual Pages ====== -->
+
+<def tag="index-page" for="Manual">
+  <page merge title="#{ht 'manual.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page manual" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="manual.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="manual.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Manual">
+  <page merge title="#{ht 'manual.new.title', :default=>[' New Manual'] }">
+    <body: class="new-page manual" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="manual.new.heading">
+            New Manual
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'manual.actions.create', :default=>['Create Manual']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Manual">
+  <page merge title="#{ht 'manual.show.title', :default=>['Manual'] }">
+
+    <body: class="show-page manual" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="manual.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="external_description, internal_description, file_name, pdf_file_name, pdf_content_type, pdf_file_size, pdf_updated_at" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="machine.collection.heading" count="&this.machines.count" >
+                  <human-collection-name collection="machines" your/>
+                </ht>
+              </h3>
+
+              <collection:machines param/>
+            </section>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Manual">
+  <page merge title="#{ht 'manual.edit.title', :default=>['Edit Manual'] }">
+
+    <body: class="edit-page manual" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="manual.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Manual
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'manual.actions.delete', :default=>['Remove This Manual']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Pressrelease Pages ====== -->
+
+<def tag="index-page" for="Pressrelease">
+  <page merge title="#{ht 'pressrelease.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page pressrelease" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="pressrelease.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="pressrelease.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Pressrelease">
+  <page merge title="#{ht 'pressrelease.new.title', :default=>[' New Pressrelease'] }">
+    <body: class="new-page pressrelease" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="pressrelease.new.heading">
+            New Pressrelease
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'pressrelease.actions.create', :default=>['Create Pressrelease']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Pressrelease">
+  <page merge title="#{ht 'pressrelease.show.title', :default=>['Pressrelease'] }">
+
+    <body: class="show-page pressrelease" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="pressrelease.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="publishedState" param/>
+          </header>
+
+          <section param="content-body">
+            <view:content param="description"/>
+            <field-list fields="permalink, teaser, site" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Pressrelease">
+  <page merge title="#{ht 'pressrelease.edit.title', :default=>['Edit Pressrelease'] }">
+
+    <body: class="edit-page pressrelease" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="pressrelease.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Pressrelease
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'pressrelease.actions.delete', :default=>['Remove This Pressrelease']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+
+
+
+<!-- ====== Site Pages ====== -->
+
+<def tag="index-page" for="Site">
+  <page merge title="#{ht 'site.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page site" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="site.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="site.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Site">
+  <page merge title="#{ht 'site.new.title', :default=>[' New Site'] }">
+    <body: class="new-page site" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="site.new.heading">
+            New Site
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'site.actions.create', :default=>['Create Site']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Site">
+  <page merge title="#{ht 'site.show.title', :default=>['Site'] }">
+
+    <body: class="show-page site" param/>
+
+    <content: param>
+      <section-group>
+        <section param="main-content">
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="site.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="title, about, jobs, terms" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="category.collection.heading" count="&this.categories.count" >
+                  <human-collection-name collection="categories" your/>
+                </ht>
+              </h3>
+
+              <sortable-collection:categories param="collection"/>
+
+              <section param="add-to-collection" if="&can_create?(@site.categories)">
+                <h3 param="add-form-heading">
+                  <ht key="category.collection.add_form_heading" count="1">
+                    Add a Category
+                  </ht>
+                </h3>
+                <form with="&@category || new_for_current_user(@site.categories)" owner="site" without-cancel param>
+                  <field-list: skip="site"/>
+                  <submit: label="#{ht 'category.actions.add', :default=>['Add'] }"/>
+                </form>
+              </section>
+            </section>
+          </section>
+        </section>
+
+        <aside param>
+          <section param="pressreleases-collection-section">
+            <h3 param="pressreleases-collection-heading">
+              <ht key="pressrelease.collection.heading" count="&this.pressreleases.count" >
+                <human-collection-name collection="pressreleases" your/>
+              </ht>
+            </h3>
+            <collection:pressreleases  param="pressreleases-collection"/>
+          </section>
+        </aside>
+      </section-group>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Site">
+  <page merge title="#{ht 'site.edit.title', :default=>['Edit Site'] }">
+
+    <body: class="edit-page site" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="site.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Site
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'site.actions.delete', :default=>['Remove This Site']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Static Pages ====== -->
+
+<def tag="index-page" for="Static">
+  <page merge title="#{ht 'static.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page static" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="static.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="static.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Static">
+  <page merge title="#{ht 'static.new.title', :default=>[' New Static'] }">
+    <body: class="new-page static" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="static.new.heading">
+            New Static
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'static.actions.create', :default=>['Create Static']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Static">
+  <page merge title="#{ht 'static.show.title', :default=>['Static'] }">
+
+    <body: class="show-page static" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="static.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Static">
+  <page merge title="#{ht 'static.edit.title', :default=>['Edit Static'] }">
+
+    <body: class="edit-page static" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="static.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Static
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'static.actions.delete', :default=>['Remove This Static']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Urlpool Pages ====== -->
+
+<def tag="index-page" for="Urlpool">
+  <page merge title="#{ht 'urlpool.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page urlpool" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="urlpool.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="urlpool.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Urlpool">
+  <page merge title="#{ht 'urlpool.new.title', :default=>[' New Urlpool'] }">
+    <body: class="new-page urlpool" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="urlpool.new.heading">
+            New Urlpool
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'urlpool.actions.create', :default=>['Create Urlpool']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Urlpool">
+  <page merge title="#{ht 'urlpool.show.title', :default=>['Urlpool'] }">
+
+    <body: class="show-page urlpool" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="urlpool.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="oldUrl, category, machine" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Urlpool">
+  <page merge title="#{ht 'urlpool.edit.title', :default=>['Edit Urlpool'] }">
+
+    <body: class="edit-page urlpool" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="urlpool.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Urlpool
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'urlpool.actions.delete', :default=>['Remove This Urlpool']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== User Pages ====== -->
+
+<def tag="index-page" for="User">
+  <page merge title="#{ht 'user.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page user" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="user.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+        <div param="new-form">
+          <h3 param="new-form-heading">
+            <ht key="user.form.new.heading">New User</ht>
+          </h3>
+          <form with="&@invalid_record || new_for_current_user(User)" param/>
+        </div>
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="#{ht 'user.new.title', :default=>[' New User'] }">
+    <body: class="new-page user" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="user.new.heading">
+            New User
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'user.actions.create', :default=>['Create User']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="#{ht 'user.show.title', :default=>['User'] }">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="user.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="user.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit User
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="email_address, user_locale, state" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="#{ht 'user.edit.title', :default=>['Edit User'] }">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="user.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit User
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'user.actions.delete', :default=>['Remove This User']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="signup-page" polymorphic/>
+<def tag="signup-page" for="User">
+
+  <page title="#{ht 'user.signup.title', :default=>['Signup']}" merge>
+
+    <body: class="lifecycle-start-page signup-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.signup.heading">
+            Signup
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <signup-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="activate-page" polymorphic/>
+<def tag="activate-page" for="User">
+  <page title="#{ht 'user.activate.title', :default=>['Activate']}" merge>
+
+    <body: class="lifecycle-transition-page activate-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.activate.heading">
+            Activate
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <activate-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="#{ht 'user.reset_password.title', :default=>['Reset Password']}" merge>
+
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.reset_password.heading">
+            Reset Password
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+

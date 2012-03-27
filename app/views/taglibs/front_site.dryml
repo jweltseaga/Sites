@@ -1,0 +1,202 @@
+<!-- Global taglib - these tags are shared across all subsites -->
+
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+<include gem="hobo-jquery" />
+<include src="paperclip" plugin="paperclip_with_hobo"/>
+<set-theme name="clean-sidemenu"/>
+
+
+
+<!-- Client side Layout -->
+
+<extend tag="page" attrs="title, full-title" >
+  <old-page merge title="&title" full-title="&full_title" without-live-search without-ajax-progress>
+
+    <title:>
+        #{siteTitle} | #{params[:id].nil? ? controller.controller_name.capitalize : this.name}
+    </title:>
+
+    <after-title:>
+      <meta name="description" content=""/>
+      <meta name="robots" content="index, follow" />
+    </after-title:>
+    
+    <stylesheets: param>
+      <stylesheet name="global" param="app-stylesheet"/>
+      <local-css locale="#{I18n.locale}" name="application"/>
+    </stylesheets:>
+ 
+<header: replace> </header:>  
+<content: replace>
+ 
+ <div class="wrapper" param>
+    <social locale="#{I18n.locale}" />
+    <div param="site-header">
+     <main-nav/>    
+    </div>
+    <div class="#{I18n.locale}" param="accent" />
+    <div class="page-title" param="page-title">
+      <a href="#{base_url}/" rel="home"/>
+      <h1 class="title" param="title-text">#{params[:id].nil? ? controller.controller_name.capitalize : this.name}</h1>
+    </div>
+    <div param="main">
+      <left-nav/>
+      <div class="right_panel" param="content" />  
+    </div>
+    <div param="footer"/>
+ </div>
+   <contactForm/>
+   <tracking locale="#{I18n.locale}" />
+  </content:>
+  </old-page>
+</extend>
+
+<!-- /Client Side Layout -->
+
+<extend tag="page">
+  <old-page merge>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+  </old-page>
+</extend>
+
+
+<extend tag="page">
+  <old-page merge>
+    <footer:>
+
+     <ul id="bottom_nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/company-profile">About Seaga</a></li>
+      <li><a href="/opportunity">Opportunities</a></li>
+      <li><a href="#contactForm">Contact Us</a></li>
+      <li><a with="&Manual">Operator's Manuals</a></li>
+     </ul>
+     <span id="copy_right">© #{Time.now.year} Seaga - All rights reserved</span>
+    </footer:>
+  </old-page>
+</extend>
+
+<def tag="left-nav">
+  <div class="left_panel">
+      <ul class="left_nav">
+       <li repeat="&findPublishedCategories"><%= link_to this, vending_solution_path(this) %></li>
+      </ul>
+      <div class="contact_cards">
+        <uk-info />
+        <us-info />
+        <in-info />
+      </div>
+   </div>
+</def>
+
+<def tag="contactForm">
+  <form id="contactForm" action="/apis/contact" method="post" >
+     <h2>Contact Us</h2>  
+         <ul>
+        <li>
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="senderName" placeholder="Please type your name" required="required" maxlength="40" />
+        </li>
+
+        <li>
+          <label for="business_name">Business Name</label>
+          <input type="text" name="business_name" placeholder="Please type your business name" id="business_name" required="required" />
+        </li>
+      <li>
+        <label for="website">Business Website</label>
+          <input type="text" name="website" placeholder="If your business has a website." id="website" />
+        </li>
+         <li>
+          <label for="phone_number">Phone Number</label>
+          <input type="text" name="phone_number" required="required" placeholder="Please type your phone number" id="phone_number" />
+        </li>
+       
+        <li>
+          <label for="email">Your Email Address</label>
+          <input type="email" name="email" id="senderEmail" placeholder="Please type your email address" required="required" maxlength="50" />
+        </li>
+      <li>
+          <label for="type">Inquiry Type</label>
+          <select id="type" name="type">
+           <option selected="" value="1">General Inquiry</option><option value="2">Customer Care</option><option value="3">Parts Request</option>
+        </select>
+        </li>
+        <li>
+          <label for="message" style="padding-top: .1em;">Your Message</label>
+          <textarea name="message" id="message" placeholder="Please type your message" required="required" cols="80" rows="10" maxlength="10000"></textarea>
+        </li>
+      </ul>
+     
+      <div id="formButtons">
+        <input type="submit" id="sendMessage" name="sendMessage" value="Send Email" />
+        <input type="button" id="cancel" name="cancel" value="Cancel" />
+      </div>
+</form>
+<div id="sendingMessage" class="statusMessage"><p>Sending your message. Please wait...</p></div>
+<div id="successMessage" class="statusMessage"><p>Thanks for sending your message! We'll get back to you shortly.</p></div>
+<div id="failureMessage" class="statusMessage"><p>There was a problem sending your message. Please try again.</p></div>
+<div id="failureMessage" class="statusMessage"><p>There was a problem sending your message. Please try again.</p></div>
+</def>
+
+<def tag="main-nav">
+  <navigation merge-attrs param="default">
+       <li class="solutions">
+          <a href="#" >About Seaga</a>
+          <ul class="sub-nav">
+                <li><a href="/company-profile">Company Profile</a></li>
+                <% if hasPress %>
+                 <li><a href="/pressreleases">Press Releases</a></li>
+                <% end %>
+                <% if hasTerms %>
+                  <li><a href="/terms">Terms</a></li>
+                <% end %>
+          </ul>
+        </li>
+       
+       <li class="solutions">
+          <a href="#" >Vending Solutions</a>
+          <ul class="sub-nav">
+                <li repeat="&findPublishedCategories"><%= link_to this, vending_solution_path(this) %></li>
+          </ul>
+        </li>
+        
+        <li class="resources">
+          <a href="#">Customer Resources</a>
+          <ul class="sub-nav">
+            <nav-item with="&Manual">Manuals</nav-item>
+            <nav-item with="&Brochure">Brochures</nav-item>
+          </ul>
+        </li>
+        <% if hasJobs %>
+        <li class="employment"><a href="/opportunity">Employment</a></li>
+        <% end %>
+        <li class="contact"><a href="#contactForm">Contact Us</a></li>
+  </navigation>
+</def>
+
+
+<def tag="card" for="MachineAssignment" localParam="#{I18n.locale}">
+  <% localMethod = I18n.locale.to_s+'_photo' %>
+
+  
+
+  <card class="machine-assignment" param="default" merge no-wrapper>
+	  
+  	<%= link_to image_tag(this.machine.send(localMethod.to_sym).url(:medium),  {:class => 'machine_img'}), vending_solution_machine_path(this.category, this.machine), :class => 'photo_link machine-link' %>
+    
+		<div class="teaser">
+			<%= link_to content_tag('h3', this.machine.name, :class => 'heading'), vending_solution_machine_path(this.category, this.machine), :class => 'view machine-name' %>
+			<p><view:machine.preview no-wrapper/></p>
+		</div>
+  </card>
+
+
+
+</def>
+

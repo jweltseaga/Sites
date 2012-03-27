@@ -1,0 +1,48 @@
+<page>
+  <append-head:>
+       <local-css locale="#{I18n.locale}" name="front"/>
+  </append-head:>
+
+ <page-title: replace> </page-title:>
+ 
+      <main:>
+      <div id="content">
+        <h1>Innovative manufacturer of quality vending machines and cold merchandising equipment for the new millennium.</h1>
+        <div id="main">
+            <p class="intro">
+                Welcome to Seaga Manufacturing, Inc. We are pleased that you chose to visit our web site, and hope you accept our invitation to browse and study our vending machines and cold merchandisers. 
+                Seaga is the fastest growing vending machine manufacturer in North America. 
+                  <br /><br />
+                Seaga is your one-stop solution for bulk vending machines, snack vending machines, soda vending machines, medical vending machines, cold and frozen vending machines, cold beverage merchandisers, change machines and customized equipment.
+            </p>
+              <div id="category_images">
+              <!--
+                <img src="images/logo.jpg" class="default" />
+                <img src="images/mechanical-vending.jpg" class="mechanical" />
+                <img src="images/charger.jpg" class="changers" />
+                <img src="images/space.jpg" class="spacesavers" />
+                <img src="images/seaga-premium.jpg" class="fullline" />
+                <img src="images/custom.jpg" class="custom" />
+                <img src="images/8.jpg" class="gumballs" />
+                <img src="images/products/coffee_vending/mini_cristallo.jpg" class="coffee" />
+              -->
+              </div>
+              <ul id="sub_nav">
+                 <li repeat="&Category.find(:all)"><a/></li>
+              </ul>
+              <ul id="address_list">
+               <li>
+                <us-info/>
+               </li>
+               <li>
+                <in-info/>
+               </li>
+               <li>
+                <uk-info/>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main:>
+
+ </page>

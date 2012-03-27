@@ -1,0 +1,74 @@
+<show-page>
+  <content-header: >
+           <h2 class="heading">
+              <ht key="machine.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="published" />
+
+            <a action="edit" class="edit-link" if="&can_edit?">
+              <ht key="machine.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Machine
+              </ht>
+            </a>
+  </content-header: >
+
+	<before-content-body:>
+		<div class="image-panel">
+		 
+	 <%	
+		 # Loop through locales
+		 	@locales = I18n.available_locales
+		 
+		 # Remove :en because rails forces this to exist	
+		 	@locales.delete(:en)
+			@locales.each do |locale| 
+			 		localMethod = locale.to_s+'_photo'
+	  %>
+		
+		 	<div class="machine-image">
+		 		<h4>#{locale.to_s}</h4>
+		 		<%= image_tag  @machine.send(localMethod.to_sym).url(:large) %>
+		 	</div>
+		 <% end %>
+	 	</div>
+	 	<div class="clear"></div>
+	</before-content-body:>
+	<content-body:> 
+    <div class="machine-description">
+      <h4>Description</h4>
+  		<p>
+  			<view:description no-wrapper />
+  		</p>
+    </div>
+		<div class="show-legacy-url"> 
+      <% this.urlpools.each do |url| %>
+			 <span class="url-title">Legacy Url</span><span class="url">#{url.oldUrl}</span>
+      <% end %>
+		</div>	
+		<field-list fields="permalink,width,height,depth,capacity"/>
+	</content-body:>
+	<after-manual_assignments-collection-heading:>
+		<h5>Drag and drop to change the primary manual</h5>
+	</after-manual_assignments-collection-heading:>
+	<manual_assignments-collection: replace>
+		<do part="after-manual-assignment">
+			<sortable-collection:manual_assignments/>
+		</do>
+	</manual_assignments-collection>
+	<after-manual_assignments-collection-section:>
+		<section if="&can_create?(@machine.manual_assignments)">
+			<h3>
+				<ht key="manual_assignment.collection.add_form_heading" count="1">
+					Add a Manual Assignment
+				</ht>
+			</h3>
+			<form with="&@manual_assignment || new_for_current_user(this.manual_assignments)" owner="machine" update="after-manual-assignment" without-cancel>
+				<field-list: skip="position, machine"/>
+				<submit: label="#{ht 'manual_assignment.add', :default=>['Add'] }"/>
+			</form>
+		</section>
+	</after-manual_assignments-collection-section:>
+</show-page>

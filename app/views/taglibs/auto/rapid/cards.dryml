@@ -1,0 +1,147 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="card" for="Api">
+  <card class="api" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Brochure">
+  <card class="brochure" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="machine.collection.count" count="&this.machines.size">
+         <count:machines param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="BrochureAssignment">
+  <card class="brochure-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Category">
+  <card class="category" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="machine_assignment.collection.count" count="&this.machine_assignments.size">
+         <count:machine_assignments param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Feature">
+  <card class="feature" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="FeatureTranslation">
+  <card class="feature-translation" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Machine">
+  <card class="machine" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="feature.collection.count" count="&this.features.size">
+         <count:features param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="MachineAssignment">
+  <card class="machine-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Manual">
+  <card class="manual" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="machine.collection.count" count="&this.machines.size">
+         <count:machines param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="ManualAssignment">
+  <card class="manual-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Pressrelease">
+  <card class="pressrelease" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Site">
+  <card class="site" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="category.collection.count" count="&this.categories.size">
+         <count:categories param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Static">
+  <card class="static" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Urlpool">
+  <card class="urlpool" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="User">
+  <card class="user" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+

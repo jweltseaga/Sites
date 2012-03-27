@@ -1,0 +1,33 @@
+# This is an auto-generated file: don't edit!
+# You can add your own routes in the config/routes.rb file
+# which will override the routes in this file.
+
+<%= Rails.application.class.name %>.routes.draw do
+<% for subsite in subsites -%>
+  <%- if subsite -%>
+
+  <%= "namespace :#{subsite} do" %>
+  <%- end -%>
+  <%- for controller in controllers_for(subsite) -%>
+    <%- router = router_for(subsite, controller)
+        groups = %w[ index_action lifecycle resource owner web_method show_action reorder user ] -%>
+
+    <%- for group in groups -%>
+    <%- gr = "#{group}_routes"
+        routes = gr == 'lifecycle_routes' ? router.send(gr.to_sym, subsite) : router.send(gr.to_sym) -%>
+    <%- unless routes.empty? -%>
+
+  <%= "  " if subsite %><%= %(# #{gr.humanize} for controller "#{controller.controller_path}") %>
+    <%- end -%>
+      <%- for route in routes -%>
+  <%= "  " if subsite %><%= route %>
+      <%- end -%>
+    <%- end -%>
+  <%- end -%>
+  <%- if subsite -%>
+
+  end
+  <%- end -%>
+<%- end -%>
+
+end

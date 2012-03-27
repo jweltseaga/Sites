@@ -1,0 +1,5 @@
+The assets directory contains the files for brochures, machine images, and manuals that are managed by the database.  
+Avoid manually editing it unless you understand how the DB and the models interact with it.
+
+About .SCSS
+SCSS or SASS is a preprocessed variant of CSS that allows for nesting and other useful things.  DO NOT DELETE THESE FILES

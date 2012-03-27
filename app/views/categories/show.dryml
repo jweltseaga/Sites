@@ -1,0 +1,8 @@
+<show-page>
+ <content-header: replace></content-header:>
+        <content:>
+       			
+       	<collection:machine_assignments/>
+        <div style="clear:both;"></div>
+        </content:>
+</show-page>

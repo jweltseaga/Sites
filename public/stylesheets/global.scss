@@ -1,0 +1,598 @@
+//  README
+//  
+//  This file should only be modified to change a global layout element, or a global theme element.
+//  To change a specific locale's theme go to the folder name for the \#{locale}
+//
+//
+
+@mixin transition{
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+*{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	text-decoration:none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body,html{
+	height:100%;
+	height:auto;
+	min-height:100%;
+}
+div.wrapper{
+	width:778px;
+	margin:0 auto;
+	position: relative;
+}
+/* ~ Global Nav ~ */
+div.site-header {
+  position: relative;
+  z-index: 5;
+ }
+
+ul.navigation {
+ 
+  font-size: .7em;
+  line-height: 16px;
+  height: 31px;
+  width: 100%;
+  list-style: none;
+  li {
+    float: left;
+    position: relative;
+    display: block;
+    &:hover{
+      ul.sub-nav{
+        left:0px;
+      }
+    }
+    a {
+      width: 140px;
+      text-align: left;
+      display: block;
+      padding: 4px 0px 6px 15px;
+      padding-bottom: 0px;
+      &:hover {
+       
+        }
+     } 
+  ul.sub-nav {
+    clear:both;
+    z-index:55;
+    position:absolute;
+    left:-9999px;
+    li {
+      float: none; 
+    }
+    a {
+      padding-left: 3px;
+      padding-bottom:3px;
+      padding-right: 12px;
+      margin-left: 0px;
+      text-align: left;
+      white-space: nowrap;
+      /* Stop text wrapping and creating multi-line dropdown items */
+      display: block; 
+      } 
+    }
+    li:hover {
+      ul {
+        left: 0;
+        
+    }
+      a {
+   }
+      ul {
+        a {
+        @include transition;
+        }
+        li a:hover {
+          } 
+        } 
+     } 
+  }
+}
+
+/*  End Nav */
+
+div.left_panel{
+	float:left;
+  width:210px;
+  ul.left_nav{
+    list-style-type:none;
+    padding: 5px 10px 5px 20px;
+    margin: 20px 0px 10px 10px;
+    
+    font-size: 11px;
+    li{
+      
+      @include transition;
+      a{
+        display:block;
+        @include transition;
+      }
+    }
+  }
+  div.contact_cards{
+    height:250px;
+    width:180px;
+    margin-left:10px;
+    div{
+      padding:10px 0px;
+      margin-bottom:5px;
+          p{
+            text-align:center;
+            font-size:11px;
+          }   
+          a.info{
+            font-size:12px;
+            text-align:center;
+            width:178px;
+            display:block;
+
+          } 
+        }
+   }
+
+}
+div.right_panel{
+  top:0px;
+  position: relative;
+  margin-left: 220px;
+  height: 100%;
+  width:558px;
+  padding-top: 20px;
+  min-height: 560px;
+}
+div.footer{
+	clear:both;
+}
+
+ul#social_media {
+  position: absolute;
+  top: 220px;
+  list-style-type: none;
+  left: -37px;
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 0;
+    margin: 0;
+    height: 36px;
+    width: 32px;
+    display: block;
+    padding: 5px 0px;
+    a {
+      height: 36px;
+      width: 32px;
+      display: block;
+      background: url('../images/smsprites.png') no-repeat; }
+    &.twitter a {
+      background-position: 0px 0px; }
+    &.fb a {
+      background-position: 0px -35px; }
+    &.linkedin a {
+      background-position: 0px -72px; }
+    &.blog a {
+      background-position: 0px -110px; }
+    &.youtube a {
+      background-position: 0px -146px; } } }
+
+body.category.show-page{
+  div.right_panel{
+  position:relative;
+    ul.collection{
+      position:relative;
+      list-style-type:none;
+      li{
+        position:relative;
+        height:210px;
+        padding:10px;
+      }
+    }
+  img.machine_img{
+    max-width:150px;
+  }
+   a.machine-link{
+      float:left;
+      &.photo_link{
+        width:150px;
+        margin-left:25px;
+      }
+      &.teaser_link{
+        margin:30px 0px 0px 30px;
+        width:280px;
+        display:block;
+      }
+    }
+    div.teaser{
+      margin-top:50px;  
+      width:300px;
+      float:left;
+      margin-left:35px;  
+      h3.heading{
+        text-align:center;
+      }
+      p{
+        text-align:justify;
+      }
+   } 
+ }
+}   
+body.machine.show-page{
+  div.right_panel{
+    div.media{
+      width:200px;
+       position:absolute;
+       top:20px;
+       padding-left:10px;
+       height:500px;
+       div.image_container{
+         height:300px;
+         img{
+           max-width: 200px;
+         }
+       }
+       div.pdfs{
+          padding-top:15px;
+         ul{
+           margin-left:14px;
+           list-style-type:none;
+           li{
+             margin:5px 0px;
+             a{
+             padding: 10px 0px;         
+             display: block;
+             width: 150px;
+             text-align: center;
+            }
+           }
+         }
+       }
+    }
+    div.details{
+      width: 318px;
+      position: relative;
+      top: 0px;
+      left: 215px;
+      padding: 10px;
+      h2.machine_title{
+        margin: 0px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        padding: 5px 0px;
+        text-align: center;
+      }
+      p{
+        margin:5px;
+        font-size: 11px;
+        line-height: 16px;
+      }
+      h4{
+        padding-right: 10px;
+        width: 200px;
+        margin-top: 20px;
+      }
+      ul.collection.features{
+        margin-top:5px;
+        margin-left:40px;
+      }
+      table.specs{
+        width:250px;
+        th{
+          width:75px;
+          font-weight:normal;
+          text-align:right;
+        }
+        td{
+          width:95px;
+          padding-left:20px;
+          text-align:left;
+        }
+      }
+    }
+  }
+}
+
+//  ==       PDF layouts    ==
+// Animation script is located in global.js
+div.pdf_assets{
+  ul{
+  list-style-type:none;
+    &.list{
+    width:200px;
+      h3.toggle{
+        cursor:pointer;
+        padding:5px 0px;
+        font-weight:normal;
+        font-size:12px;
+        text-align:left;
+        line-height:18px;
+        span{margin-left:20px;font-size:14px;}
+      }
+    }
+      &.pdfs{
+        display:none;
+        li{
+          height:30px;
+          position:relative;
+          font-size:14px;
+          &:hover{
+            span.description{
+              opacity:1.0;
+            }
+          }
+          a.machine{
+            position:absolute;
+            @include transition;
+            line-height:20px;
+            left:0px;
+            text-align:right;
+            width:150px;
+            padding:5px 50px 5px 0px;
+          }
+          span.description{
+            @include transition;
+            opacity:0;
+            position:absolute;
+            left:150px;
+            text-align:left;
+            padding-left:30px;
+            width:200px;
+          }
+        }
+      }
+    
+  }
+
+}
+
+
+#contactForm, .statusMessage {
+  z-index:100;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+input {
+  &[type="submit"], &[type="button"] {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; } }
+
+/* Style for the contact form and status messages */
+
+#contactForm, .statusMessage {
+  color: #666;
+  background-color: #ebedf2;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dfe1e5), color-stop(1, #ebedf2));
+  background: -moz-linear-gradient(center bottom, #dfe1e5 0%, #ebedf2 100%);
+  border: 1px solid #aaa;
+  -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  opacity: .95; }
+
+/* The form dimensions */
+
+#contactForm {
+  width: 40em;
+  height: 40em;
+  padding: 0 1.5em 1.5em 1.5em;
+  margin: 0 auto;
+  &.positioned {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 20px; } }
+
+/* Position the form in the middle of the window (if JavaScript is enabled) */
+
+/* Dimensions and position of the status messages */
+
+.statusMessage {
+  display: none;
+  margin: auto;
+  width: 30em;
+  height: 2em;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  p {
+    text-align: center;
+    margin: 0;
+    padding: 0; } }
+
+/* The header at the top of the form */
+
+#contactForm {
+  h2 {
+    font-size: 2em;
+    font-style: italic;
+    letter-spacing: .05em;
+    margin: 0 0 1em -0.75em;
+    padding: .65em 1em .45em 1em;
+    width: 19.5em;
+    color: #5289B2;
+    background: #dfe0e5 /* url('../images/small_blue_logo.png') no-repeat 15em 0.5em */;
+    /* http://morguefile.com/archive/display/606433 */
+    border-bottom: 1px solid #aaa;
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0; }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: .9em 0 0 0;
+      padding: 0; } }
+  input {
+    line-height: 1em; }
+  label {
+    line-height: 1em;
+    display: block;
+    float: left;
+    clear: left;
+    text-align: right;
+    width: 28%;
+    padding: .4em 0 0 0;
+    margin: .15em .5em 0 0;
+    font-weight: bold; }
+  input {
+    display: block;
+    margin: 0;
+    padding: .4em;
+    width: 67%;
+    font-family: "Georgia", serif;
+    font-size: 1em;
+    border: 1px solid #aaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px inset;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px inset;
+    background: #fff; }
+  textarea {
+    display: block;
+    margin: 0;
+    padding: .4em;
+    width: 67%;
+    font-family: "Georgia", serif;
+    font-size: 1em;
+    border: 1px solid #aaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px inset;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px inset;
+    background: #fff;
+    height: 10em;
+    line-height: 1.5em;
+    resize: none; }
+  *:focus {
+    border: 1px solid #66f;
+    outline: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none; }
+  input:valid, textarea:valid {
+    background: #dfd; }
+  input {
+    &[type="submit"], &[type="button"] {
+      float: right;
+      margin: 2em 1em 0 1em;
+      width: 10em;
+      padding: .5em;
+      border: 1px solid #666;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+      -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+      color: #fff;
+      background: #039;
+      font-size: 1em;
+      line-height: 1em;
+      font-weight: bold;
+      opacity: .7;
+      -webkit-appearance: none;
+      -moz-transition: opacity .5s;
+      -webkit-transition: opacity .5s;
+      -o-transition: opacity .5s;
+      transition: opacity .5s; }
+    &[type="submit"] {
+      &:hover, &:active {
+        cursor: pointer;
+        opacity: 1; } }
+    &[type="button"] {
+      &:hover, &:active {
+        cursor: pointer;
+        opacity: 1; } }
+    &[type="submit"]:active {
+      color: #333;
+      background: #eee;
+      -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8) inset;
+      -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8) inset;
+      box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8) inset; } } }
+
+
+input[type="button"]:active {
+  color: #333;
+  background: #eee;
+  -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8) inset;
+  -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8) inset; }
+
+#contactForm input[type="button"] {
+  background: #f33; }
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+  h1 {
+    font-weight: bold;
+    margin: 20px;
+    color: #666;
+    font-size: 1.5em; } }
+
+ul.articles
+  {
+    margin-right:15px;
+    list-style-type:none;
+    li{
+      margin-bottom:10px;
+      h3.article-title{
+        font-size:13px;
+        margin-bottom:10px;
+        a.article-link{
+          display:block;
+          padding:10px;
+        }
+      }
+      p{
+        padding:10px;
+        font-size:12px;
+      }
+    }
+  }
+
+div.article{
+  h2{
+    padding-bottom:5px;
+    font-size:18px;
+    margin-bottom:10px;
+    text-align:center;
+    margin-right:40px;
+  }
+  p{
+    font-size:14px;
+    margin:10px 5px;
+    text-align:justify;
+  }
+  .view{
+    margin-right:40px;
+  }
+}
+

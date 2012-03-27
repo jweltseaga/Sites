@@ -1,0 +1,85 @@
+<extend tag="page">
+  <old-page merge>
+   <head:>
+      <param-content/>
+      <meta name="description" content="" param="meta-description"/>
+      <meta name="keywords" content="" param="meta-keywords"/>
+    </head:>
+    <stylesheets: param>
+     <!-- <stylesheet name="reset"/>  -->
+     <!-- <stylesheet name="application" param="app-stylesheet"/>  -->
+       <local-css locale="#{params[:locale]}" />
+    </stylesheets:>
+    
+   <body: id="wrapper"/>
+     <header: param>
+     <!-- <account-nav if="&login_url(Hobo::Model::UserBase.default_user_model)" param/>  -->
+      <div class="global_menu"><main-nav: param/></div>
+      <div id="header" >
+        <div class="left_accent top">  </div>
+        <div class="middle_accent top"> </div>
+        <div class="right_accent top"> </div>
+        <div class="bottom_accent">     </div>
+        <a rel="home" href="/" id="home"> </a>
+    </div>
+    <h1 id="page_title"><name/></h1>
+    </header:>
+
+    <content: id="content">
+           <div id="left-column" param="left-column"><left-nav/></div>          
+           <div id="right-content" param="content"><param-content/></div>
+   </content:>
+
+  <contact: id="contact">
+        <form id="contactForm" action="submit.php" method="post" style="display: none; " class="positioned">
+         <h2>Contact Us</h2>  
+             <ul>
+            <li>
+              <label for="name">Your Name</label>
+              <input type="text" name="name" id="senderName" placeholder="Please type your name" required="required" maxlength="40" />
+            </li>
+
+            <li>
+              <label for="business_name">Business Name</label>
+              <input type="text" name="business_name" placeholder="Please type your business name" id="business_name" required="required" />
+            </li>
+          <li>
+            <label for="website">Business Website</label>
+              <input type="text" name="website" placeholder="If your business has a website." id="website" />
+            </li>
+          
+           
+             <li>
+              <label for="phone_number">Phone Number</label>
+              <input type="text" name="phone_number" required="required" placeholder="Please type your phone number" id="phone_number" />
+            </li>
+           
+            <li>
+              <label for="email">Your Email Address</label>
+              <input type="email" name="email" id="senderEmail" placeholder="Please type your email address" required="required" maxlength="50" />
+            </li>
+          <li>
+              <label for="type">Inquiry Type</label>
+              <select id="type" name="type">
+               <option selected="" value="1">General Inquiry</option><option value="2">Customer Care</option><option value="3">Parts Request</option>
+            </select>
+            </li>
+            <li>
+              <label for="message" style="padding-top: .5em;">Your Message</label>
+              <textarea name="message" id="message" placeholder="Please type your message" required="required" cols="80" rows="10" maxlength="10000"></textarea>
+            </li>
+         
+          </ul>
+         
+          <div id="formButtons">
+            <input type="submit" id="sendMessage" name="sendMessage" value="Send Email" />
+            <input type="button" id="cancel" name="cancel" value="Cancel" />
+          </div>
+    </form>
+    <div id="sendingMessage" class="statusMessage"><p>Sending your message. Please wait...</p></div>
+    <div id="successMessage" class="statusMessage"><p>Thanks for sending your message! We'll get back to you shortly.</p></div>
+    <div id="failureMessage" class="statusMessage"><p>There was a problem sending your message. Please try again.</p></div>
+    <div id="incompleteMessage" class="statusMessage"><p>Please complete all the fields in the form before sending.</p></div>
+  </contact:>
+  </old-page>
+</extend>

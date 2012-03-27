@@ -1,0 +1,140 @@
+GIT
+  remote: git://github.com/bryanlarsen/hobo-jquery.git
+  revision: 3578efd55304328249a7df2a8167bc731dc0e608
+  branch: rails3
+  specs:
+    hobo-jquery (1.3.0pre1)
+
+GIT
+  remote: git://github.com/jeanmartin/paperclip.git
+  revision: 4095e07adaace2a123cbd031fa268928f3b0ce87
+  branch: master
+  specs:
+    paperclip (2.3.10)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+
+GIT
+  remote: git://github.com/tablatom/hobo.git
+  revision: 85741ec6b99988fec5c6a72fd73ddd90ec520c5c
+  ref: 85741ec6b99988fec5c6a72fd73ddd90ec520c5c
+  branch: rails3
+  specs:
+    dryml (1.3.0.RC2)
+      actionpack (~> 3.0.0)
+      hobo_support (= 1.3.0.RC2)
+    hobo (1.3.0.RC2)
+      dryml (= 1.3.0.RC2)
+      hobo_fields (= 1.3.0.RC2)
+      hobo_support (= 1.3.0.RC2)
+      will_paginate (>= 3.0.pre)
+    hobo_fields (1.3.0.RC2)
+      hobo_support (= 1.3.0.RC2)
+    hobo_support (1.3.0.RC2)
+      rails (~> 3.0.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    abstract (1.0.0)
+    actionmailer (3.0.9)
+      actionpack (= 3.0.9)
+      mail (~> 2.2.19)
+    actionpack (3.0.9)
+      activemodel (= 3.0.9)
+      activesupport (= 3.0.9)
+      builder (~> 2.1.2)
+      erubis (~> 2.6.6)
+      i18n (~> 0.5.0)
+      rack (~> 1.2.1)
+      rack-mount (~> 0.6.14)
+      rack-test (~> 0.5.7)
+      tzinfo (~> 0.3.23)
+    activemodel (3.0.9)
+      activesupport (= 3.0.9)
+      builder (~> 2.1.2)
+      i18n (~> 0.5.0)
+    activerecord (3.0.9)
+      activemodel (= 3.0.9)
+      activesupport (= 3.0.9)
+      arel (~> 2.0.10)
+      tzinfo (~> 0.3.23)
+    activeresource (3.0.9)
+      activemodel (= 3.0.9)
+      activesupport (= 3.0.9)
+    activesupport (3.0.9)
+    arel (2.0.10)
+    barista (1.2.1)
+      coffee-script (~> 2.2)
+    builder (2.1.2)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.2.0)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    execjs (1.2.11)
+      multi_json (~> 1.0)
+    globalize3 (0.1.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+    i18n (0.5.0)
+    json (1.6.1)
+    mail (2.2.19)
+      activesupport (>= 2.3.6)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    memcache-client (1.8.5)
+    mime-types (1.16)
+    multi_json (1.0.4)
+    pg (0.11.0)
+    pg (0.11.0-x86-mingw32)
+    polyglot (0.3.2)
+    rack (1.2.4)
+    rack-mount (0.6.14)
+      rack (>= 1.0.0)
+    rack-test (0.5.7)
+      rack (>= 1.0)
+    rails (3.0.9)
+      actionmailer (= 3.0.9)
+      actionpack (= 3.0.9)
+      activerecord (= 3.0.9)
+      activeresource (= 3.0.9)
+      activesupport (= 3.0.9)
+      bundler (~> 1.0)
+      railties (= 3.0.9)
+    railties (3.0.9)
+      actionpack (= 3.0.9)
+      activesupport (= 3.0.9)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (~> 0.14.4)
+    rake (0.8.7)
+    rdoc (3.9.4)
+    record-cache (0.1.2)
+      rails (>= 3.0)
+    thor (0.14.6)
+    treetop (1.4.10)
+      polyglot
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.29)
+    will_paginate (3.0.pre2)
+
+PLATFORMS
+  ruby
+  x86-mingw32
+
+DEPENDENCIES
+  barista
+  globalize3
+  hobo!
+  hobo-jquery!
+  json
+  memcache-client
+  paperclip!
+  pg
+  rails (= 3.0.9)
+  rake (= 0.8.7)
+  record-cache
+  will_paginate (= 3.0.pre2)

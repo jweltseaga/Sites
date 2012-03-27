@@ -1,0 +1,7 @@
+<slideshow width="280" height="250" speed="2">
+<image url="uk/images/specialty.png" title="Specialty Vending" />
+<image url="uk/images/full_line.png" title="Full Line Vending" />
+<image url="uk/images/compact.png" title="Compact Vending" />
+<image url="uk/images/od38.png" title="Combi Vending" />
+<image url="uk/images/crisp.png" title="Crisp Vending" />
+</slideshow>

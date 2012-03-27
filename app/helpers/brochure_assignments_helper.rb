@@ -1,0 +1,2 @@
+module BrochureAssignmentsHelper
+end

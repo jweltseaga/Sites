@@ -1,0 +1,30 @@
+<index-page>
+        <content:>
+       			
+       	<collection/>
+        <div style="clear:both;"></div>
+        </content:>
+</index-page>
+
+<def tag="collection" >
+  <div class="pdf_assets">
+	<ul class="list">
+		 <repeat with="&Category.find(:all, :joins => :site, :conditions => {:sites => {:name => I18n.locale}})" >
+		 	<li class="category">
+			 	<h3 class="toggle"><name/></h3>
+				 <ul class="pdfs">
+				 	<repeat with="&this.machines" >
+				 		<if test="&this.brochures.first">
+							<li>
+								<set-scoped item="&this.brochures.first">
+									<%= link_to this.name, scope.item.pdf.url,{class: 'machine', target: '_blank'} %>
+								</set-scoped>
+							</li>
+						</if>
+					</repeat>
+				 </ul>
+			 </li>
+		 </repeat>
+	</ul>
+  </div>
+</def>

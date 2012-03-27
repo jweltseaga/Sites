@@ -1,0 +1,183 @@
+<!-- Tag definitions for the admin subsite -->
+
+<include src="rapid" gem="hobo"/>
+<include gem="hobo-jquery" />
+<include src="paperclip" plugin="paperclip_with_hobo"/>
+
+<include src="taglibs/auto/admin/rapid/cards"/>
+<include src="taglibs/auto/admin/rapid/pages"/>
+<include src="taglibs/auto/admin/rapid/forms"/>
+<set-theme name="clean-sidemenu"/>
+
+
+<extend tag="page">
+	<old-page merge>
+		<after-scripts:>
+			<javascript name="ckeditor/ckeditor"/>
+			<javascript name="load_ckeditor"/>
+      <javascript name="admin" />
+		</after-scripts:>
+		<custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+    <append-stylesheets:>
+      <stylesheet name="admin"/>
+    </append-stylesheets:>
+    <footer:>
+      <a href="#{base_url}/"><t key="hobo.subsite.back_link">View Site</t></a>
+    </footer:>
+	</old-page>
+</extend>
+
+
+
+<def tag="flags">
+    <%= link_to image_tag("/images/en_flag.gif", :border=>0)+" EN", "?locale=en" %>
+    <%= link_to image_tag("/images/uk_flag.gif", :border=>0)+" UK", "?locale=uk" %>
+    <%= link_to image_tag("/images/in_flag.gif", :border=>0)+" IN", "?locale=in" %>
+</def>
+
+<extend tag="account-nav">
+  <old-account-nav merge>
+    <!-- <prepend-ul:><li><flags/></li></prepend-ul:> -->
+  </old-account-nav>
+</extend>
+
+<def tag="hidden-field">
+  <%= hidden_field_tag("locale", "#{I18n.locale}") %>
+</def> 
+
+<extend tag="form">
+<old-form merge>
+		<before-submit:>
+			<hidden-field param/>
+		</before-submit:>
+	</old-form>
+</extend>
+
+<extend tag="form" for="ManualAssignment">
+	<old-form merge>
+		<field-list:>
+			<manual-view:>
+				<select-one-or-new-dialog/>
+			</manual-view:>
+		</field-list:>
+	</old-form>
+</extend>
+
+<extend tag="form" for="User">
+  <old-form merge>
+   <field-list: fields="name, email_address, state, user_locale, administrator"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Site">
+  <old-form merge>
+    <field-list: fields="title ,jobs, about, terms"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Category">
+	<old-form merge>
+		<field-list: fields="name, urlpools, published, permalink, description, machines"/>
+	</old-form>
+</extend>
+
+<extend tag="form" for="Machine">
+  <old-form merge multipart>
+    <field-list: fields="name,published, permalink, us_photo, uk_photo, in_photo, description, weight, height, width, depth, capacity, features, urlpools"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Pressrelease">
+  <old-form merge multipart>
+    <field-list: fields="name, permalink, teaser, site, content, publishedState"/>
+  </old-form>
+</extend>
+
+<extend tag="form" for="Manual">
+  <old-form merge multipart>
+    <field-list: fields="name, external_description, internal_description, pdf,  machines"/>
+  </old-form>
+</extend>
+ 
+<extend tag="form" for="Brochure">
+  <old-form merge multipart>
+    <field-list: fields="name, external_description, internal_description, pdf,  machines"/>
+  </old-form>
+</extend>
+
+
+
+
+
+
+<def tag="card" for="MachineAssignment">
+  <card class="machine" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a:machine><view:name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="feature.collection.count" count="&this.machine.features.size">
+         <count:machine.features param/>
+      </ht><br/>
+      <ht key="manual.collection.count" count="&this.machine.manuals.size">
+         <count:machine.manuals param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<extend tag="card" for="Machine">
+	<old-card merge>
+    <header: >
+       <name />
+       <a action="show" class="show-link">
+             View
+      </a>
+       <a action="edit" class="edit-link" if="&can_edit?">
+             Edit
+      </a>
+    <div class="clear"></div>
+    </header: >
+		<body:>
+		  <ht key="feature.collection.count" count="&this.features.size">
+         <count:features param/>
+      </ht>
+			<br/>This machine has <count:manuals/>.
+      <% this.urlpools.each do |url| %>
+       <br /><span class="url-title">Legacy Url: </span><span class="url">#{url.oldUrl}</span>
+      <% end %>     
+		</body:>
+	</old-card>
+</extend>
+
+<def tag="card" for="ManualAssignment">
+  <card class="manual" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a:manual><view:name/></a></h4>
+			<div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+    <body: param>
+      <ht key="machine.collection.count" count="&this.manual.machines.size">
+         <count:manual.machines param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+
+<extend tag="card" for="Manual">
+  <old-card merge>
+		<append-header:>
+			<div param="actions">
+        <delete-button label="X" param/>
+      </div>
+		</append-header:>
+    <body:>
+			<name/> is assigned to the following <count:machines param/>:
+			<br/><repeat:manual_assignments><b><a:machine/></b> in position #<view:position/><br/></repeat>
+    </body:>
+  </old-card>
+</extend>

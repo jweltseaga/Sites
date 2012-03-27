@@ -1,0 +1,13 @@
+development: 
+  ttl: 604800
+  namespace: seagamfg-dev
+  sessions: false
+  debug: false
+  servers: localhost:11211
+
+production:
+  ttl: 604800
+  namespace: seagamfg
+  sessions: false
+  debug: true
+  servers: localhost:11211

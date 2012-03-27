@@ -1,0 +1,25 @@
+<index-page>
+  <title-text:>
+    <h1 class="title">
+     Press Releases
+    </h1>
+  </title-text:>
+  <content:>
+    <collection />
+  </content:>
+</index-page>
+
+<def tag="collection" >
+  <ul class="articles">
+    <repeat with="&@pressreleases">
+      <li class="article">
+        <h3 class="article-title">
+          <a class="article-link"><view:name no-wrapper/></a>
+        </h3>
+        <p class="article-teaser">
+          <view:teaser no-wrapper/>
+        </p>
+      </li>
+    </repeat>
+  </ul>
+</def>

@@ -1,0 +1,54 @@
+<show-page>
+	<title-text: replace>
+		<h1 class="title">#{@category.name}</h1>
+	</title-text:>
+	<content: >
+		<div class="media">
+			<div class="image_container">
+			<% localMethod = I18n.locale.to_s+'_photo' %>
+			<%= image_tag  @machine.send(localMethod.to_sym).url(:large),  {:class => 'machine_img'} %>
+			</div>
+			<div class="pdfs">
+				<collection:manual_assignments without-empty-message/>
+				<collection:brochure_assignments without-empty-message/>
+			</div>
+		</div>
+		<div class="details">
+			<h2 class="machine_title">
+			   The <name/>
+			</h2>
+			<p>
+				<view:description no-wrapper/>
+			</p>
+			<h4 class="features">Product Features</h4>
+			<collection:features without-empty-message/>
+			<% if this.height.nil? && this.width.nil? && this.depth.nil? && this.weight.nil? && this.capacity.nil? %>
+				<h4 class="specs" style="border-bottom:none;width:310px;">Contact Us For Product Specifications</h4>
+			<% else %>
+				<h4 class="specs">Product Specifications:</h4>
+				<field-list: class="specs" fields="humanizedHeight, humanizedWidth, humanizedDepth, humanizedWeight, capacity"  no-blanks>
+						<humanizedHeight-label:>Height:</humanizedHeight-label:>
+						<humanizedWidth-label:>Width:</humanizedWidth-label:>
+						<humanizedDepth-label:>Depth:</humanizedDepth-label:>
+						<humanizedWeight-label:>Weight:</humanizedWeight-label:>
+				</field-list:>
+			<% end %>
+		</div>
+	</content:>
+</show-page>
+
+<def tag="card" for="Feature">
+     <view:name inline-wrapper/>
+</def>
+
+<!-- I believe it would be more dry for a polymorphic tag to be used that switched cases between manual/brochure -->
+
+
+
+<def tag="card" for="ManualAssignment">
+		<%= link_to "Manual", this.manual.pdf.url %>
+</def>
+
+<def tag="card" for="BrochureAssignment">
+    <%= link_to "Brochure", this.brochure.pdf.url %>
+</def>

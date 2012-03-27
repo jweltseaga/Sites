@@ -1,0 +1,11 @@
+<page>
+  <title:>
+      Terms
+    </title:>
+    <title-text:>
+         <h1 class="title">Terms And Conditions</h1>
+    </title-text:>
+    <content: class="static terms" >
+        <view with="&@site.terms" no-wrapper/>
+    </content:>
+</page>

@@ -1,0 +1,17 @@
+<show-page/>
+<def tag="card" for="Category">
+  <card class="category" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a/></h4>
+      <div param="actions">
+        <a action="edit" if="&can_edit?" param="edit-link">
+          <ht key="category.actions.edit">Edit</ht>
+        </a>
+      </div>
+    </header:>
+    <body: param>
+			<name/> has the following <count:machines param/>:
+			<br/><repeat:machines>  <a/><br/></repeat>
+    </body:>
+  </card>
+</def>

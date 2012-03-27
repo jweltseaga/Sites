@@ -1,0 +1,14 @@
+development:
+  :address: exchange.seagamfg.com
+  :port: 25
+  :authentication: :login
+  :user_name: seagamfg\seaga
+  :password: Seaga*7&
+  :enable_starttls_auto: true
+production:
+  :address: exchange.seagamfg.com
+  :port: 25
+  :authentication: :login
+  :user_name: seagamfg\seaga
+  :password: Seaga*7&
+  :enable_starttls_auto: true

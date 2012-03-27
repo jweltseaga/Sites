@@ -1,0 +1,4 @@
+# pack-refs with: peeled 
+3578efd55304328249a7df2a8167bc731dc0e608 refs/heads/rails3
+b5e6b31a25a0c1bfe6e615cd481541894a056a9e refs/heads/master
+1ad7068b9c6257cb28959e9d6781d4fc961bf271 refs/heads/gh-pages

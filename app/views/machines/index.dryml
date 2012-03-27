@@ -1,0 +1,17 @@
+<index-page>
+<def tag="card" for="Machine">
+  <card class="machine" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <ht key="feature.collection.count" count="&this.features.size">
+         <count:features param/>
+      </ht>
+      <ht key="category.collection.count" count="&this.categories.size">
+         <count:categories param/>
+      </ht>
+    </body:>
+  </card>
+</def>
+</index-page>

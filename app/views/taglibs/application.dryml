@@ -1,0 +1,132 @@
+<!-- Global taglib - these tags are shared across all subsites -->
+
+
+<def tag="local-css" attrs="locale,name">
+  <link href="/#{locale}/stylesheets/#{name}.css" rel="stylesheet" type="text/css" />
+</def>
+
+<def tag="accents" attrs="locale">
+	<div class="banner"> </div>
+</def>
+
+<def tag="social" attrs="locale">
+  
+  <% if locale.eql?('uk') %>
+	 
+    <ul id="social_media">
+        <li class="twitter" style="margin-left: 0px; "><a href="http://twitter.com/seagaUK"></a></li>
+        <li class="fb" style="margin-left: 0px; "><a href="https://www.facebook.com/pages/Seaga-UK/219832218028791"></a></li>
+        <li class="linkedin" style="margin-left: 0px; "><a href="http://www.seagamfg.com/linkedin/"></a></li>
+        <li class="youtube" style="margin-left: 0px; "><a href="http://www.seagamfg.com/youtube/"></a></li>
+        <li class="blog" style="margin-left: 0px; "><a href="http://blog.seagamfg.com/"></a></li>
+      </ul>
+  
+  <% else %>
+  
+  <ul id="social_media">
+        <li class="twitter" style="margin-left: 0px; "><a href="http://twitter.com/seaga"></a></li>
+    <li class="fb" style="margin-left: 0px; "><a href="https://www.facebook.com/seagaVending"></a></li>
+    <li class="linkedin" style="margin-left: 0px; "><a href="http://www.seagamfg.com/linkedin/"></a></li>
+    <li class="youtube" style="margin-left: 0px; "><a href="http://www.seagamfg.com/youtube/"></a></li>
+    <li class="blog" style="margin-left: 0px; "><a href="http://blog.seagamfg.com/"></a></li>
+  </ul>
+  
+  <% end %>
+
+</def>
+
+<def tag="tracking" attrs="locale">
+  
+  <% if locale.eql?('uk') %>
+   <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://tools.seagamfg.com/analytics/" : "http://tools.seagamfg.com/analytics/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script>
+    <noscript><p><img src="http://tools.seagamfg.com/analytics/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+    
+  
+  <% elsif locale.eql?('us') %>
+    
+    <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://tools.seagamfg.com/analytics/" : "http://tools.seagamfg.com/analytics/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script>
+    <noscript><p><img src="http://tools.seagamfg.com/analytics/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+      
+  <% else %>
+
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://tools.seagamfg.com/analytics/" : "http://tools.seagamfg.com/analytics/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script>
+    <noscript><p><img src="http://tools.seagamfg.com/analytics/piwik.php?idsite=3" style="border:0" alt="" /></p></noscript>
+
+  
+  <% end %>
+
+</def>
+
+
+
+<def tag="us-info">
+  <div class="us_contact">
+    <a href="http://www.seagamfg.com/">
+              <p>
+                Seaga Manufacturing, Inc. <br />
+                700 Seaga Drive <br/>
+                Freeport, IL 61032 USA <br/>
+                voice:815-297-9500 <br/>
+                fax:815-297-1700 
+              </p>
+      </a>
+      <a class="info" href="mailto:info@seagamfg.com">info@seagamfg.com</a>
+    </div>
+</def>
+
+<def tag="uk-info">
+    <div class="uk_contact">
+      <a href="http://www.seagaindia.com/">
+              <p>
+                  Seaga India Pvt. Ltd.<br/>
+                  309A  MIE, Bahadurgarh<br />
+                  Haryana - 124 507 INDIA<br/>
+                  voice: 91-12-7626 8122 <br/>
+                  fax: 91-12-7626 7079
+              </p>
+            </a>
+      <a class="info" href="mailto:info@seagaindia.com">info@seagaindia.com</a>
+    </div>
+</def>
+
+<def tag="in-info">
+    <div class="in_contact">
+          <a href="http://www.seaga.co.uk/">
+              <p>
+                  Seaga UK Ltd.<br/>
+                  Unit 8, Cae Bach, Off Builder Street,<br/>
+                  Llandudno North Wales LL30 1DR<br/>
+                  voice: +44(0)1492 874010<br/>
+                  fax: +44 (0) 1492 878185
+              </p>
+            </a>
+            <a class="info" href="mailto:info@seaga.co.uk">info@seaga.co.uk</a>
+    </div>
+</def>

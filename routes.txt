@@ -1,0 +1,98 @@
+(in C:/Sites/seaga-sites)
+                               admin_front        /admin/front(.:format)                                   {:controller=>"admin/front", :action=>"index"}
+                               site_search        /search(.:format)                                        {:controller=>"admin/front", :action=>"search"}
+                                      root        /(.:format)                                              {:controller=>"front", :action=>"index"}
+                          vending_solution        /vending_solutions/:id(.:format)                         {:controller=>"categories", :action=>"show"}
+                  vending_solution_machine        /vending_solutions/:vending_solution_id/:id(.:format)    {:controller=>"machines", :action=>"show"}
+                             dryml_support        /dryml/:action(.:format)                                 {:controller=>"dryml_support"}
+                               dev_support        /dev/:action(.:format)                                   {:controller=>"dev"}
+                       brochure_assignment GET    /brochure_assignments/:id(.:format)                      {:controller=>"brochure_assignments", :action=>"show"}
+                                   manuals GET    /manuals(.:format)                                       {:controller=>"manuals", :action=>"index"}
+                                    manual GET    /manuals/:id(.:format)                                   {:controller=>"manuals", :action=>"show"}
+                                categories GET    /categories(.:format)                                    {:controller=>"categories", :action=>"index"}
+                                  category GET    /categories/:id(.:format)                                {:controller=>"categories", :action=>"show"}
+                  create_category_for_site POST   /sites/:site_id/categories(.:format)                     {:controller=>"categories", :action=>"create_for_site"}
+                            do_user_signup POST   /users/signup(.:format)                                  {:controller=>"users", :action=>"do_signup"}
+                               user_signup GET    /users/signup(.:format)                                  {:controller=>"users", :action=>"signup"}
+                          do_user_activate PUT    /users/:id/activate(.:format)                            {:controller=>"users", :action=>"do_activate"}
+                             user_activate GET    /users/:id/activate(.:format)                            {:controller=>"users", :action=>"activate"}
+                    do_user_reset_password PUT    /users/:id/reset_password(.:format)                      {:controller=>"users", :action=>"do_reset_password"}
+                       user_reset_password GET    /users/:id/reset_password(.:format)                      {:controller=>"users", :action=>"reset_password"}
+                                 edit_user GET    /users/:id/edit(.:format)                                {:controller=>"users", :action=>"edit"}
+                                      user GET    /users/:id(.:format)                                     {:controller=>"users", :action=>"show"}
+                               create_user POST   /users(.:format)                                         {:controller=>"users", :action=>"create"}
+                               update_user PUT    /users/:id(.:format)                                     {:controller=>"users", :action=>"update"}
+                              destroy_user DELETE /users/:id(.:format)                                     {:controller=>"users", :action=>"destroy"}
+                              user_account GET    /users/:id/account(.:format)                             {:controller=>"users", :action=>"account"}
+                                user_login        /login(.:format)                                         {:controller=>"users", :action=>"login"}
+                               user_logout GET    /logout(.:format)                                        {:controller=>"users", :action=>"logout"}
+                      user_forgot_password        /forgot_password(.:format)                               {:controller=>"users", :action=>"forgot_password"}
+                                 brochures GET    /brochures(.:format)                                     {:controller=>"brochures", :action=>"index"}
+                                  brochure GET    /brochures/:id(.:format)                                 {:controller=>"brochures", :action=>"show"}
+                         manual_assignment GET    /manual_assignments/:id(.:format)                        {:controller=>"manual_assignments", :action=>"show"}
+                        machine_assignment GET    /machine_assignments/:id(.:format)                       {:controller=>"machine_assignments", :action=>"show"}
+                                   feature GET    /features/:id(.:format)                                  {:controller=>"features", :action=>"show"}
+                                      site GET    /sites/:id(.:format)                                     {:controller=>"sites", :action=>"show"}
+                                  machines GET    /machines(.:format)                                      {:controller=>"machines", :action=>"index"}
+                                   machine GET    /machines/:id(.:format)                                  {:controller=>"machines", :action=>"show"}
+                                  rss_apis GET    /apis/rss(.:format)                                      {:controller=>"apis", :action=>"rss"}
+                                 json_apis GET    /apis/json(.:format)                                     {:controller=>"apis", :action=>"json"}
+                              sitemap_apis GET    /apis/sitemap(.:format)                                  {:controller=>"apis", :action=>"sitemap"}
+                              contact_apis GET    /apis/contact(.:format)                                  {:controller=>"apis", :action=>"contact"}
+                            admin_machines GET    /admin/machines(.:format)                                {:controller=>"admin/machines", :action=>"index"}
+                         admin_new_machine GET    /admin/machines/new(.:format)                            {:controller=>"admin/machines", :action=>"new"}
+                        admin_edit_machine GET    /admin/machines/:id/edit(.:format)                       {:controller=>"admin/machines", :action=>"edit"}
+                             admin_machine GET    /admin/machines/:id(.:format)                            {:controller=>"admin/machines", :action=>"show"}
+                      admin_create_machine POST   /admin/machines(.:format)                                {:controller=>"admin/machines", :action=>"create"}
+                      admin_update_machine PUT    /admin/machines/:id(.:format)                            {:controller=>"admin/machines", :action=>"update"}
+                     admin_destroy_machine DELETE /admin/machines/:id(.:format)                            {:controller=>"admin/machines", :action=>"destroy"}
+               admin_new_manual_assignment GET    /admin/manual_assignments/new(.:format)                  {:controller=>"admin/manual_assignments", :action=>"new"}
+            admin_create_manual_assignment POST   /admin/manual_assignments(.:format)                      {:controller=>"admin/manual_assignments", :action=>"create"}
+            admin_update_manual_assignment PUT    /admin/manual_assignments/:id(.:format)                  {:controller=>"admin/manual_assignments", :action=>"update"}
+           admin_destroy_manual_assignment DELETE /admin/manual_assignments/:id(.:format)                  {:controller=>"admin/manual_assignments", :action=>"destroy"}
+admin_create_manual_assignment_for_machine POST   /admin/machines/:machine_id/manual_assignments(.:format) {:controller=>"admin/manual_assignments", :action=>"create_for_machine"}
+          admin_reorder_manual_assignments POST   /admin/manual_assignments/reorder(.:format)              {:controller=>"admin/manual_assignments", :action=>"reorder"}
+                               admin_sites GET    /admin/sites(.:format)                                   {:controller=>"admin/sites", :action=>"index"}
+                            admin_new_site GET    /admin/sites/new(.:format)                               {:controller=>"admin/sites", :action=>"new"}
+                           admin_edit_site GET    /admin/sites/:id/edit(.:format)                          {:controller=>"admin/sites", :action=>"edit"}
+                                admin_site GET    /admin/sites/:id(.:format)                               {:controller=>"admin/sites", :action=>"show"}
+                         admin_create_site POST   /admin/sites(.:format)                                   {:controller=>"admin/sites", :action=>"create"}
+                         admin_update_site PUT    /admin/sites/:id(.:format)                               {:controller=>"admin/sites", :action=>"update"}
+                        admin_destroy_site DELETE /admin/sites/:id(.:format)                               {:controller=>"admin/sites", :action=>"destroy"}
+                             admin_manuals GET    /admin/manuals(.:format)                                 {:controller=>"admin/manuals", :action=>"index"}
+                          admin_new_manual GET    /admin/manuals/new(.:format)                             {:controller=>"admin/manuals", :action=>"new"}
+                         admin_edit_manual GET    /admin/manuals/:id/edit(.:format)                        {:controller=>"admin/manuals", :action=>"edit"}
+                              admin_manual GET    /admin/manuals/:id(.:format)                             {:controller=>"admin/manuals", :action=>"show"}
+                       admin_create_manual POST   /admin/manuals(.:format)                                 {:controller=>"admin/manuals", :action=>"create"}
+                       admin_update_manual PUT    /admin/manuals/:id(.:format)                             {:controller=>"admin/manuals", :action=>"update"}
+                      admin_destroy_manual DELETE /admin/manuals/:id(.:format)                             {:controller=>"admin/manuals", :action=>"destroy"}
+                           admin_brochures GET    /admin/brochures(.:format)                               {:controller=>"admin/brochures", :action=>"index"}
+                        admin_new_brochure GET    /admin/brochures/new(.:format)                           {:controller=>"admin/brochures", :action=>"new"}
+                       admin_edit_brochure GET    /admin/brochures/:id/edit(.:format)                      {:controller=>"admin/brochures", :action=>"edit"}
+                            admin_brochure GET    /admin/brochures/:id(.:format)                           {:controller=>"admin/brochures", :action=>"show"}
+                     admin_create_brochure POST   /admin/brochures(.:format)                               {:controller=>"admin/brochures", :action=>"create"}
+                     admin_update_brochure PUT    /admin/brochures/:id(.:format)                           {:controller=>"admin/brochures", :action=>"update"}
+                    admin_destroy_brochure DELETE /admin/brochures/:id(.:format)                           {:controller=>"admin/brochures", :action=>"destroy"}
+                        admin_new_category GET    /admin/categories/new(.:format)                          {:controller=>"admin/categories", :action=>"new"}
+                       admin_edit_category GET    /admin/categories/:id/edit(.:format)                     {:controller=>"admin/categories", :action=>"edit"}
+                            admin_category GET    /admin/categories/:id(.:format)                          {:controller=>"admin/categories", :action=>"show"}
+                     admin_create_category POST   /admin/categories(.:format)                              {:controller=>"admin/categories", :action=>"create"}
+                     admin_update_category PUT    /admin/categories/:id(.:format)                          {:controller=>"admin/categories", :action=>"update"}
+                    admin_destroy_category DELETE /admin/categories/:id(.:format)                          {:controller=>"admin/categories", :action=>"destroy"}
+            admin_create_category_for_site POST   /admin/sites/:site_id/categories(.:format)               {:controller=>"admin/categories", :action=>"create_for_site"}
+                  admin_reorder_categories POST   /admin/categories/reorder(.:format)                      {:controller=>"admin/categories", :action=>"reorder"}
+                               admin_users GET    /admin/users(.:format)                                   {:controller=>"admin/users", :action=>"index"}
+                            admin_new_user GET    /admin/users/new(.:format)                               {:controller=>"admin/users", :action=>"new"}
+                           admin_edit_user GET    /admin/users/:id/edit(.:format)                          {:controller=>"admin/users", :action=>"edit"}
+                                admin_user GET    /admin/users/:id(.:format)                               {:controller=>"admin/users", :action=>"show"}
+                         admin_create_user POST   /admin/users(.:format)                                   {:controller=>"admin/users", :action=>"create"}
+                         admin_update_user PUT    /admin/users/:id(.:format)                               {:controller=>"admin/users", :action=>"update"}
+                        admin_destroy_user DELETE /admin/users/:id(.:format)                               {:controller=>"admin/users", :action=>"destroy"}
+           admin_create_machine_assignment POST   /admin/machine_assignments(.:format)                     {:controller=>"admin/machine_assignments", :action=>"create"}
+           admin_update_machine_assignment PUT    /admin/machine_assignments/:id(.:format)                 {:controller=>"admin/machine_assignments", :action=>"update"}
+          admin_destroy_machine_assignment DELETE /admin/machine_assignments/:id(.:format)                 {:controller=>"admin/machine_assignments", :action=>"destroy"}
+         admin_reorder_machine_assignments POST   /admin/machine_assignments/reorder(.:format)             {:controller=>"admin/machine_assignments", :action=>"reorder"}
+                         admin_new_feature GET    /admin/features/new(.:format)                            {:controller=>"admin/features", :action=>"new"}
+                      admin_create_feature POST   /admin/features(.:format)                                {:controller=>"admin/features", :action=>"create"}
+                      admin_update_feature PUT    /admin/features/:id(.:format)                            {:controller=>"admin/features", :action=>"update"}
+                     admin_destroy_feature DELETE /admin/features/:id(.:format)                            {:controller=>"admin/features", :action=>"destroy"}

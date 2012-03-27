@@ -1,0 +1,181 @@
+<page>
+   <title:>
+     <% if I18n.locale.to_s.eql?('us') %>
+        Seaga | Vending Solutions For North America
+     <% elsif I18n.locale.to_s.eql?('uk')  %>
+        Seaga UK Ltd. | Vending Solutions For Europe
+     <% else %>
+        Seaga India | Vending Solutions For Asia
+     <% end %>
+   </title:>
+
+  <append-head:>
+       <local-css locale="#{I18n.locale}" name="front"/>
+  </append-head:>
+
+ <page-title: replace> </page-title:>
+   <main:>
+   <% if I18n.locale.to_s.eql?('us') %>
+      
+      
+      <div id="flash">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="778" height="260">
+                <param name="movie" value="swf/products_usa.swf" />
+                <param name="quality" value="high" />
+                <param name="wmode" value="transparent" />
+                <embed src="swf/products_usa.swf" width="778" height="260" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" />
+          </object>
+      </div>
+      <!-- loadstorm-b8f169073d -->
+      <div id="content">
+        <h1>Innovative manufacturer of quality vending machines and cold merchandising equipment for the new millennium.</h1>
+        <div id="main">
+            <p class="intro">
+                Welcome to Seaga Manufacturing, Inc. We are pleased that you chose to visit our web site, and hope you accept our invitation to browse and study our vending machines and cold merchandisers. 
+                Seaga is the fastest growing vending machine manufacturer in North America. 
+                  <br /><br />
+                Seaga is your one-stop solution for bulk vending machines, snack vending machines, soda vending machines, medical vending machines, cold and frozen vending machines, cold beverage merchandisers, change machines and customized equipment.
+            </p>
+              <div id="category_images">
+              <%=  %>
+              <!--
+                <img src="images/logo.jpg" class="default" />
+                <img src="images/mechanical-vending.jpg" class="mechanical" />
+                <img src="images/charger.jpg" class="changers" />
+                <img src="images/space.jpg" class="spacesavers" />
+                <img src="images/seaga-premium.jpg" class="fullline" />
+                <img src="images/custom.jpg" class="custom" />
+                <img src="images/8.jpg" class="gumballs" />
+                <img src="images/products/coffee_vending/mini_cristallo.jpg" class="coffee" />
+              -->
+              </div>
+              <ul id="sub_nav">
+                <li repeat="&findPublishedCategories"><%= link_to this, vending_solution_path(this) %></li>
+              </ul>
+              <ul id="address_list">
+               <li>
+                <us-info/>
+               </li>
+               <li>
+                <in-info/>
+               </li>
+               <li>
+                <uk-info/>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+    
+    <% elsif I18n.locale.to_s.eql?('uk')  %>
+
+     
+      <div class="middle">
+      <h1 class="page-title">High Quality Vending Machines And Cold Merchandisers</h1>
+      <div class="left">
+        <div class="welcome">
+          <h2>Innovative manufacturer of quality vending machines and cold merchandisers.</h2>
+          <p class="intro">Welcome to Seaga UK Ltd. We are pleased 
+                    that you chose to visit our web site, and hope you accept our 
+                    invitation to browse and study our vending machines and cold 
+                    merchandisers. Seaga is one of the fastest growing vending machine 
+                    manufacturer in the world.
+          </p>
+          <p class="intro">
+                    Seaga is your one-stop solution for bite-size vending machines, 
+                    snack vending machines, soda vending machines, medical vending 
+                    machines, cold and frozen vending machines, and cold beverage 
+                    merchandisers.
+          </p>
+        </div>
+      </div>
+      <div id="flash">
+        <div id="captions">
+          <div class="active" data-content="full_line"><p>Full Line Equipment</p><p><img src="uk/images/premium_collection_script.jpg" /></p></div>
+          <div data-content="specialty"><p>Specialty Equipment</p><p>Custom Configurations</p></div>
+          <div data-content="crisp"><p>Mechanical Vending</p></div>
+          <div data-content="compact"><p>Compact Electronic Equipment</p></div>
+          <div data-content="od38"><p>The<br/> Office Deli</p></div>
+
+        </div>
+        <div id="slides">
+          <img class="active" data-content="full_line" src="uk/images/slideshow/full_line.jpg" />
+          <img data-content="specialty" src="uk/images/slideshow/specialty.jpg" />
+          <img data-content="crisp" src="uk/images/slideshow/crisp.jpg" />
+          <img data-content="compact" src="uk/images/slideshow/compact.jpg" />
+          <img data-content="od38" src="uk/images/slideshow/od38.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <ul class="sub_nav">
+                 <li repeat="&findPublishedCategories"><%= link_to this, vending_solution_path(this) %></li>
+    </ul>
+    <ul id="address_list">
+         <li class="first">
+            <us-info/>
+         </li>
+         <li>
+            <in-info/>
+         </li>
+         <li>
+            <uk-info/>
+        </li>
+    </ul>
+         
+       <script>
+       jQuery(window).load(function($) {
+
+        jQuery('div#captions div:not(.active), div#slides img:not(.active)').css({opacity: 0.0});
+
+        var loop = this.setInterval(function(){
+            front_slideshow();
+            },4000);  
+        });
+      </script>
+     
+      <% else %>
+
+      
+      <div id="content">
+        <h1>Innovative manufacturer of quality vending machines and cold merchandising equipment for the new millennium.</h1>
+        <div id="main">
+            <p class="intro">
+                Welcome to Seaga Manufacturing, Inc. We are pleased that you chose to visit our web site, and hope you accept our invitation to browse and study our vending machines and cold merchandisers. 
+                Seaga is the fastest growing vending machine manufacturer in North America. 
+                  <br /><br />
+                Seaga is your one-stop solution for bulk vending machines, snack vending machines, soda vending machines, medical vending machines, cold and frozen vending machines, cold beverage merchandisers, change machines and customized equipment.
+            </p>
+              <div id="category_images">
+              <!--
+                <img src="images/logo.jpg" class="default" />
+                <img src="images/mechanical-vending.jpg" class="mechanical" />
+                <img src="images/charger.jpg" class="changers" />
+                <img src="images/space.jpg" class="spacesavers" />
+                <img src="images/seaga-premium.jpg" class="fullline" />
+                <img src="images/custom.jpg" class="custom" />
+                <img src="images/8.jpg" class="gumballs" />
+                <img src="images/products/coffee_vending/mini_cristallo.jpg" class="coffee" />
+              -->
+              </div>
+              <ul id="sub_nav">
+                 <li repeat="&findPublishedCategories"><%= link_to this, vending_solution_path(this) %></li>
+              </ul>
+              <ul id="address_list">
+               <li>
+                <us-info/>
+               </li>
+               <li>
+                <in-info/>
+               </li>
+               <li>
+                <uk-info/>
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+
+      <% end %>
+  </main:>
+ </page>

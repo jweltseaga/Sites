@@ -1,0 +1,2 @@
+module ManualAssignmentsHelper
+end

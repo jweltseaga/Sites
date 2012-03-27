@@ -1,0 +1,202 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="form" for="Api">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'api.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="BrochureAssignment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="position, brochure, machine" param/>
+    <div param="actions">
+      <submit label="#{ht 'brochure_assignment.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Brochure">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, external_description, internal_description, file_name, pdf_file_name, pdf_content_type, pdf_file_size, pdf_updated_at, machines" param/>
+    <div param="actions">
+      <submit label="#{ht 'brochure.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Category">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, description, permalink, published, photo_file_name, photo_content_type, photo_file_size, photo_updated_at, position, machines, site, urlpools" param/>
+    <div param="actions">
+      <submit label="#{ht 'category.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Feature">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, machine" param/>
+    <div param="actions">
+      <submit label="#{ht 'feature.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="MachineAssignment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="position, category, machine" param/>
+    <div param="actions">
+      <submit label="#{ht 'machine_assignment.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Machine">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, permalink, description, height, width, depth, capacity, weight, published, us_photo_file_name, us_photo_content_type, us_photo_file_size, us_photo_updated_at, uk_photo_file_name, uk_photo_content_type, uk_photo_file_size, uk_photo_updated_at, in_photo_file_name, in_photo_content_type, in_photo_file_size, in_photo_updated_at, brochures, categories, features, manuals, urlpools" param/>
+    <div param="actions">
+      <submit label="#{ht 'machine.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="ManualAssignment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="position, machine, manual" param/>
+    <div param="actions">
+      <submit label="#{ht 'manual_assignment.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Manual">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, external_description, internal_description, file_name, pdf_file_name, pdf_content_type, pdf_file_size, pdf_updated_at, machines" param/>
+    <div param="actions">
+      <submit label="#{ht 'manual.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Pressrelease">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, permalink, teaser, content, publishedState, site" param/>
+    <div param="actions">
+      <submit label="#{ht 'pressrelease.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Site">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, title, about, jobs, terms" param/>
+    <div param="actions">
+      <submit label="#{ht 'site.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Static">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'static.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Urlpool">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="oldUrl, category, machine" param/>
+    <div param="actions">
+      <submit label="#{ht 'urlpool.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="User">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, administrator, user_locale, state" param/>
+    <div param="actions">
+      <submit label="#{ht 'user.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="signup-form" polymorphic/>
+<def tag="signup-form" for="User">
+  <form lifecycle="signup" merge param="default">
+    <error-messages param/>
+    <field-list fields="name, email_address, password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{ht 'user.actions.signup', :default=>['Signup']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+<def tag="activate-form" polymorphic/>
+<def tag="activate-form" for="User">
+  <form lifecycle="activate" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{t 'activerecord.attributes.user.lifecycle.transitions.activate', :default=>['Activate']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+<def tag="reset-password-form" polymorphic/>
+<def tag="reset-password-form" for="User">
+  <form lifecycle="reset_password" merge param="default">
+    <error-messages param/>
+    <input type="hidden" name="key" value="&this.lifecycle.provided_key" if="&this.lifecycle.provided_key"/>
+    <field-list fields="password, password_confirmation" param/>
+    <div param="actions">
+      <submit label="#{t 'activerecord.attributes.user.lifecycle.transitions.reset_password', :default=>['Reset Password']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+

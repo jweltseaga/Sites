@@ -1,0 +1,23 @@
+<edit-page>
+<before-content-body:>
+    <div class="image-panel">
+     
+   <% 
+     # Loop through locales
+      @locales = I18n.available_locales
+     
+     # Remove :en because rails forces this to exist  
+      @locales.delete(:en)
+      @locales.each do |locale| 
+          localMethod = locale.to_s+'_photo'
+    %>
+    
+      <div class="machine-image">
+        <h4>#{locale.to_s}</h4>
+        <%= image_tag  @machine.send(localMethod.to_sym).url(:large) %>
+      </div>
+     <% end %>
+    </div>
+    <div class="clear"></div>
+  </before-content-body:>
+</edit-page>

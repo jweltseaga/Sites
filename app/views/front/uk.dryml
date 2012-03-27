@@ -1,0 +1,74 @@
+<page>
+  <append-head:>
+       <local-css locale="#{I18n.locale}" name="front"/>
+  </append-head:>
+
+ <page-title: replace> </page-title:>
+      <main:>
+      <div class="middle">
+      <h1 class="page-title">High Quality Vending Machines And Cold Merchandisers</h1>
+      <div class="left">
+        <div class="welcome">
+          <h2>Innovative manufacturer of quality vending machines and cold merchandisers.</h2>
+          <p class="intro">Welcome to Seaga UK Ltd. We are pleased 
+                    that you chose to visit our web site, and hope you accept our 
+                    invitation to browse and study our vending machines and cold 
+                    merchandisers. Seaga is one of the fastest growing vending machine 
+                    manufacturer in the world.
+          </p>
+          <p class="intro">
+                    Seaga is your one-stop solution for bite-size vending machines, 
+                    snack vending machines, soda vending machines, medical vending 
+                    machines, cold and frozen vending machines, and cold beverage 
+                    merchandisers.
+          </p>
+        </div>
+      </div>
+      <div id="flash">
+        <div id="captions">
+          <div class="active" data-content="full_line"><p>Full Line Equipment</p><p><img src="uk/images/premium_collection_script.jpg" /></p></div>
+          <div data-content="specialty"><p>Specialty Equipment</p><p>Custom Configurations</p></div>
+          <div data-content="crisp"><p>Mechanical Vending</p></div>
+          <div data-content="compact"><p>Compact Electronic Equipment</p></div>
+          <div data-content="od38"><p>The<br/> Office Deli</p></div>
+
+        </div>
+        <div id="slides">
+          <img class="active" data-content="full_line" src="uk/images/slideshow/full_line.jpg" />
+          <img data-content="specialty" src="uk/images/slideshow/specialty.jpg" />
+          <img data-content="crisp" src="uk/images/slideshow/crisp.jpg" />
+          <img data-content="compact" src="uk/images/slideshow/compact.jpg" />
+          <img data-content="od38" src="uk/images/slideshow/od38.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <ul class="sub_nav">
+                 <li repeat="&Category.find(:all)"><a/></li>
+    </ul>
+    <ul id="address_list">
+         <li class="first">
+            <us-info/>
+         </li>
+         <li>
+            <in-info/>
+         </li>
+         <li>
+            <uk-info/>
+        </li>
+    </ul>
+         
+       <script>
+       jQuery(window).load(function($) {
+
+        jQuery('div#captions div:not(.active), div#slides img:not(.active)').css({opacity: 0.0});
+
+        var loop = this.setInterval(function(){
+            front_slideshow();
+            },4000);  
+        });
+      </script>
+      </main:>
+ 
+   </page>
+
